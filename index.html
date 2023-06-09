@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fullscreen Test</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    #fullscreen-container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="fullscreen-container">
+    <!-- Your website content here -->
+    <h1>Welcome to My Fullscreen Website</h1>
+    <p>This is an example of a fullscreen website.</p>
+  </div>
+
+  <script>
+    function enterFullscreen() {
+      var element = document.documentElement;
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      enterFullscreen();
+    });
+  </script>
+</body>
+</html>
